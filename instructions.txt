@@ -1,0 +1,10 @@
+Some instructions to follow:
+
+1) kindly change the data connection in app config file accordingly to your database in your system
+2) Do the change the name of connection string with your database name in startup.cs file. Below is the code where you need to change it.
+
+services.AddDbContext<CreatingDatabase>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("Project")));
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
